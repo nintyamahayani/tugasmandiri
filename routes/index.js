@@ -1,17 +1,15 @@
 import express from "express";
-import { getNotifs, getNotifId, saveNotifs, updateNotifs, deleteNotifs } from "../controllers/NotificationController.js";
-
+import { getNotifs, getNotifID, saveNotif, updateNotif, deleteNotif } from "../controllers/notificationController.js";
 const router = express.Router();
-
-//read all data
-router.get('/', getNotifs); 
-//read data by id
-router.get('/:id', getNotifId);
+//get all data
+router.get('/', getNotifs);
 //create data
-router.post('/', saveNotifs);
+router.post('/', saveNotif);
+//get data by ID
+router.get('/:id', getNotifID);
 //update data
-router.patch('/:id', updateNotifs);
+router.patch('/:id', updateNotif);
 //delete data
-router.delete('/:id', deleteNotifs);
+router.delete('/:id', deleteNotif);
 
 export default router;

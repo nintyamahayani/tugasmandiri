@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
-
+import { Timestamp } from "bson";
 const Notification = mongoose.Schema({
-    req_id: {
+    reqID: {
         type: String,
         require: true
     },
@@ -10,17 +10,22 @@ const Notification = mongoose.Schema({
         require: true
     },
     description: {
-        type: String
+        type: String,
+
     },
-    user_id: {
+
+    name: {
+        type: String,
+
+    },
+
+    userID: {
         type: Number,
         require: true
     },
-    file: {
-        type: String
-    }
-},{
-    timestamps: true
-});
 
-export default mongoose.model("Notifications", Notification);
+}, {
+    timestamps: true,
+
+});
+export default mongoose.model("Notification", Notification);
